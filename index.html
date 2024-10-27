@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <title>Conversor de Unidades</title>
+
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/fotos-premium/imagen-borrosa-monton-luces-que-estan-mesa-generativa-ai_1034052-35527.jpg'); /* Cambia esta URL por la de tu imagen */
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: 'Lora', serif; /* Fuente elegante */
+            color: #333; /* Texto en gris oscuro */
+        }
+        #resultado {
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        .conversion-section {
+            margin-top: 2rem;
+            padding: 2rem;
+            border: 1px solid #00796b; /* Borde color teal */
+            border-radius: 10px;
+            background-color: #ffffff; /* Fondo blanco */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-family: 'Pacifico', cursive; /* Título más atractivo */
+            color: #000000; /* Color del título */
+            font-size: 2.5rem; /* Tamaño del título */
+        }
+        h3 {
+            color: #020350; /* Color de los subtítulos */
+            font-weight: 700; /* Negrita para los subtítulos */
+        }
+        .form-label {
+            font-weight: bold; /* Etiquetas en negrita */
+            color: #555; /* Color de etiquetas */
+        }
+        .form-text {
+            font-size: 0.9rem; /* Tamaño de texto de ayuda */
+        }
+    </style>
+
+</head>
+
+<body>
+    <main>
+        <div class="px-4 py-2 my-2 text-center border-bottom">
+            <img class="d-block mx-auto mb-2" src="SENATI-LOGO.png" alt="" width="30%" height="30%">
+            <h1 class="display-5 fw-bold">Conversor de Unidades</h1>
+            <div class="col-lg-12 max-auto">
+                <p class="lead mb-0">Conversión de Pulgadas a kilómetros y centímetros</p>
+                <p class="lead mb-4">Programado por Nayeli Salinas</p>
+            </div>
+        </div>
+                <div class="col-12 col-md-4 offset-md-4">
+                    <div class="conversion-section">
+                        <h3>De Pulgadas a Kilómetros y Centímetros</h3>
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label" for="pulgadas">Pulgadas:</label>
+                                <input type="number" class="form-control" id="pulgadas" oninput="cambiarPulgadas();" placeholder="Ingresa pulgadas">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="resultado-longitud">Resultados</label>
+                                <div id="resultado-longitud">0 pulgadas son 0 kilómetros y 0 centímetros.</div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="b-example-divider mb-0"></div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+        function cambiarCelsius() {
+            var celsius = document.getElementById('celsius').value;
+            document.getElementById('lbl-celsius').innerHTML = celsius;
+            var fahrenheit = (celsius * 9 / 5) + 32;
+            document.getElementById("resultado").innerHTML = celsius + " Celsius son " + Math.round(fahrenheit) + " Fahrenheit.";
+        }
+
+        function cambiarPulgadas() {
+            var pulgadas = document.getElementById('pulgadas').value;
+            var kilometros = pulgadas * 0.0000254;
+            var centimetros = pulgadas * 2.54;
+            document.getElementById("resultado-longitud").innerHTML = 
+                pulgadas + " pulgadas son " + 
+                (kilometros.toFixed(6)) + " kilómetros y " + 
+                centimetros.toFixed(2) + " centímetros.";
+        }
+    </script>
+</body>
+</html>
